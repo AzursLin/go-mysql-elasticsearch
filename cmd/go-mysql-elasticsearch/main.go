@@ -37,6 +37,7 @@ func main() {
 		syscall.SIGINT,
 		syscall.SIGTERM,
 		syscall.SIGQUIT)
+	signal.Ignore(syscall.SIGHUP)
 
 	cfg, err := river.NewConfigWithFile(*configFile)
 	if err != nil {
